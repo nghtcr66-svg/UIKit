@@ -20,14 +20,13 @@ class ButtonWidget extends StatelessWidget {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.Accent,
-          foregroundColor: AppColors.White,
         ),
         onPressed: onTap,
         child: Align(
           alignment: Alignment.center,
           child: Text(
             text,
-            style: AppTypography.TittlePoppins.copyWith(fontWeight: FontWeight.bold, fontSize: 14),
+            style: AppTypography.TittlePoppins.copyWith(fontWeight: FontWeight.bold, fontSize: 14, color: AppColors.White),
           ),
         )
     );
