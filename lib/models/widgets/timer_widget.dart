@@ -22,6 +22,8 @@ class TimerWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
         color: AppColors.Accent
       ),
+      width: widht,
+      height: height,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
