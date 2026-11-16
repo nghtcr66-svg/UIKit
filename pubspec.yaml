@@ -25,28 +25,8 @@ flutter:
 
   # To add assets to your package, add an assets section, like this:
   assets:
-    - assets/images/1.png
-    - assets/images/2.png
-    - assets/images/3.png
-    - assets/images/4.png
-    - assets/images/5.png
-    - assets/images/6.png
-    - assets/images/7.png
-    - assets/images/8.png
-    - assets/images/9.png
-    - assets/icons/Access Icon.png
-    - assets/icons/ch.png
-    - assets/icons/checker.png
-    - assets/icons/chli.png
-    - assets/icons/chs.png
-    - assets/icons/h.png
-    - assets/icons/li.png
-    - assets/icons/lp.png
-    - assets/icons/pi.png
-    - assets/icons/rc.png
-    - assets/icons/si.png
-    - assets/icons/sic.png
-    - assets/icons/sm.png
+    - assets/images/
+    - assets/icons/
 
 
 
