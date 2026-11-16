@@ -17,18 +17,22 @@ class ButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.Accent,
-        ),
-        onPressed: onTap,
-        child: Align(
-          alignment: Alignment.center,
-          child: Text(
-            text,
-            style: AppTypography.TittlePoppins.copyWith(fontWeight: FontWeight.bold, fontSize: 14, color: AppColors.White),
+    return SizedBox(
+      width: widht,
+      height: height,
+      child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.Accent,
           ),
-        )
+          onPressed: onTap,
+          child: Align(
+            alignment: Alignment.center,
+            child: Text(
+              text,
+              style: AppTypography.TittlePoppins.copyWith(fontWeight: FontWeight.bold, fontSize: 14, color: AppColors.White),
+            ),
+          )
+      ),
     );
   }
 }
