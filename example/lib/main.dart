@@ -6,6 +6,12 @@ import 'package:nuikit/models/widgets/timer_widget.dart';
 import 'package:nuikit/nuikit.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 import 'package:nuikit/models/widgets/checkbox_widget.dart';
+import 'package:nuikit/models/widgets/custominput_widget.dart';
+import 'package:nuikit/models/widgets/customtimer_widget.dart';
+import 'package:nuikit/models/widgets/picker_widget.dart';
+
+
+
 
 void main() {
   runApp(const MyStorybookApp());
@@ -34,14 +40,6 @@ class MyStorybookApp extends StatelessWidget {
         ),
       ),
       stories: [
-        // --- ИСТОРИЯ 1: Простой тест ---
-        Story(
-          name: 'Тестовая кнопка',
-          builder: (context) => ElevatedButton(
-            onPressed: () {},
-            child: const Text('Работает!'),
-          ),
-        ),
 
         // --- ИСТОРИЯ 2: Сюда вставь свой виджет ---
         Story(
@@ -81,20 +79,47 @@ class MyStorybookApp extends StatelessWidget {
             }
         ),
         Story(
-            name: "Timer Widget",
-            builder: (context){
-              return TimerWidget(
-                  widht: 300,
-                  height: 100
-              );
-            }
-        ),
-        Story(
             name: "Checkbox Widget",
             builder: (context){
               return CheckboxWidget(
                   padding: 20,
-                  text: "teeeeeeeest"
+                  text: ""
+              );
+            }
+        ),
+        Story(
+            name: "Input",
+            builder: (context){
+              return CustominputWidget(
+                  text_hint: "Hint text",
+                  controller: TextEditingController()
+              );
+            }
+        ),
+        Story(
+            name: "Input2",
+            builder: (context){
+              return CustominputWidget(
+                  text_hint: "Password",
+                  controller: TextEditingController(),
+                  obscureText: true,
+              );
+            }
+        ),
+        Story(
+            name: "Timer Widget",
+            builder: (context){
+              return CustomtimerWidget(
+                  widht: 295,
+                  height: 99
+              );
+            }
+        ),
+        Story(
+            name: "Select",
+            builder: (context){
+              return PickerWidget(
+                hasLine: true,
               );
             }
         ),

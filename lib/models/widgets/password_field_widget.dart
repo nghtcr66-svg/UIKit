@@ -34,7 +34,7 @@ class _PasswordFieldState extends State<PasswordFieldwidget> {
       controller: widget.controller,
       obscureText: _hide,
       suffixIcon: IconButton(
-// Помогал Claude code и немного кода Ярослава(что в целом одно и то же) 
+        // Помогал Claude code и немного кода Ярослава(что в целом одно и то же)
         onPressed: () => setState(() {
           _hide = !_hide;
         }),
