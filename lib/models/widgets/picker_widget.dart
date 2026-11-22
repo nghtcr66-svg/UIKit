@@ -5,13 +5,7 @@ class PickerWidget extends StatefulWidget {
   final String title;
   final bool hasLine;
 
-
-
-  const PickerWidget({
-    super.key,
-    this.title = "FROM",
-    required this.hasLine
-  });
+  const PickerWidget({super.key, this.title = "FROM", required this.hasLine});
 
   @override
   State<PickerWidget> createState() => _PickerState();
@@ -21,7 +15,20 @@ class _PickerState extends State<PickerWidget> {
   String dateText = "MON, NOV 4,2019";
 
   // Список для перевода номера месяца в текст
-  final months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+  final months = [
+    'JAN',
+    'FEB',
+    'MAR',
+    'APR',
+    'MAY',
+    'JUN',
+    'JUL',
+    'AUG',
+    'SEP',
+    'OCT',
+    'NOV',
+    'DEC',
+  ];
   final days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
 
   @override
@@ -40,7 +47,8 @@ class _PickerState extends State<PickerWidget> {
         // 2. Если дату выбрали — меняем текст
         if (date != null) {
           setState(() {
-            dateText = "${days[date.weekday - 1]}, ${months[date.month - 1]} ${date.day},${date.year}";
+            dateText =
+                "${days[date.weekday - 1]}, ${months[date.month - 1]} ${date.day},${date.year}";
           });
         }
       },
@@ -59,7 +67,9 @@ class _PickerState extends State<PickerWidget> {
             if (widget.title.isNotEmpty)
               Text(
                 widget.title,
-                style: AppTypography.Caption2_Bold.copyWith(color: AppColors.Accent),
+                style: AppTypography.Caption2_Bold.copyWith(
+                  color: AppColors.Accent,
+                ),
               ),
             Padding(
               padding: EdgeInsets.only(top: 4),

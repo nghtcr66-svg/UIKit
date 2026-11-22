@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nuikit/nuikit.dart';
 
 //------------------Делаем кастомный класс родитель для заполнения чтобы просто потом вставлять данные--------------------
-class CustomFieldWidget extends StatelessWidget{
+class CustomFieldWidget extends StatelessWidget {
   //Принимаем прям усе что только можно прикол в том что доп функции всегда есть но по-умолчанию не юзаем
   final String text_hint;
   final TextEditingController controller;
@@ -16,8 +15,6 @@ class CustomFieldWidget extends StatelessWidget{
   final TextInputType inputType;
   final Widget? suffixIcon;
   final bool obscureText;
-
-
 
   CustomFieldWidget({
     super.key,
@@ -32,17 +29,19 @@ class CustomFieldWidget extends StatelessWidget{
   });
 
   //-----------Вернет уже гготовый виджет со всем стилем его функционал можно расширить---------------------
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return TextField(
       decoration: InputDecoration(
         hintText: text_hint,
         errorText: errorMess,
         suffixIcon: suffixIcon,
         counterText: '', //спрятали счетчик я хз почему он появляется мне так Claude code сказал
-        enabledBorder: UnderlineInputBorder(   // линия, когда поле не в фокусе
+        enabledBorder: UnderlineInputBorder(
+          // линия, когда поле не в фокусе
           borderSide: BorderSide(color: AppColors.Accent_inactive),
         ),
-        focusedBorder: UnderlineInputBorder(   // линия, когда нажал на поле
+        focusedBorder: UnderlineInputBorder(
+          // линия, когда нажал на поле
           borderSide: BorderSide(color: AppColors.Accent, width: 2),
         ),
       ),

@@ -1,26 +1,20 @@
-
 import 'package:flutter/material.dart';
 import 'package:nuikit/nuikit.dart';
 
 import 'avatar_widget.dart';
 
 class Combatwidget extends StatelessWidget {
-
-
   final double wight;
   final double height;
   final String NameOne;
   final String NameTwo;
-
-
 
   const Combatwidget({
     super.key,
     required this.height,
     required this.wight,
     required this.NameOne,
-    required this.NameTwo
-
+    required this.NameTwo,
   });
 
   @override
@@ -32,164 +26,141 @@ class Combatwidget extends StatelessWidget {
         border: BoxBorder.all(color: AppColors.Accent),
         borderRadius: BorderRadius.circular(14),
       ),
-        child: Row(
-          children: [
-            Column(
-              children: [
-                Padding(
-                  padding: EdgeInsetsGeometry.only(
-                    left: 21,
-                    top: 14,
-                    bottom: 2.73
+      child: Row(
+        children: [
+          Column(
+            children: [
+              Padding(
+                padding: EdgeInsetsGeometry.only(
+                  left: 21,
+                  top: 14,
+                  bottom: 2.73,
+                ),
+                child: AvatarWidget(
+                  wight: 23,
+                  height: 23,
+                  onTap: () {},
+                  dec: Border.all(style: BorderStyle.none),
+                ),
+              ),
+              //----------------------------Текст имени 1-------------------------
+              Padding(
+                padding: EdgeInsetsGeometry.only(bottom: 11, left: 16),
+                child: Align(
+                  alignment: AlignmentGeometry.center,
+                  child: Text(
+                    NameOne,
+                    style: AppTypography.MainHat.copyWith(fontSize: 6),
                   ),
-                  child: AvatarWidget(
-                      wight: 23,
-                      height: 23,
-                      onTap: (){},
-                      dec: Border.all(
-                        style: BorderStyle.none,
-                      ),)
                 ),
-                //----------------------------Текст имени 1-------------------------
-                Padding(
-                    padding: EdgeInsetsGeometry.only(
-                      bottom: 11,
-                      left: 16
-                    ),
-                    child: Align(
-                      alignment: AlignmentGeometry.center,
-                      child: Text(
-                        NameOne,
-                        style: AppTypography.MainHat.copyWith(fontSize: 6)
-                      ),
-                    ),
-                ),
-              ],
-            ),
-            //--------------------------VS-----------------------------------------
-            Padding(padding: EdgeInsetsGeometry.only(
-              top: 17,
-              left: 16.73,
-              bottom: 17
-            ),
-              child: Text(
-                'VS',
-                style: AppTypography.TittlePoppins.copyWith(fontSize: 24, letterSpacing: 0.38),
+              ),
+            ],
+          ),
+          //--------------------------VS-----------------------------------------
+          Padding(
+            padding: EdgeInsetsGeometry.only(top: 17, left: 16.73, bottom: 17),
+            child: Text(
+              'VS',
+              style: AppTypography.TittlePoppins.copyWith(
+                fontSize: 24,
+                letterSpacing: 0.38,
               ),
             ),
-            Column(
+          ),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 16, top: 14, bottom: 2.73),
+                child: AvatarWidget(
+                  wight: 23,
+                  height: 23,
+                  onTap: () {},
+                  dec: Border.all(style: BorderStyle.none),
+                ),
+              ),
+              //----------------------------Текст имени 2-------------------------
+              Padding(
+                padding: EdgeInsetsGeometry.only(bottom: 11, left: 11),
+                child: Align(
+                  alignment: AlignmentGeometry.center,
+                  child: Text(
+                    NameTwo,
+                    style: AppTypography.MainHat.copyWith(fontSize: 6),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          //---------------GAME----------------------------------
+          Flexible(
+            child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(
-                    left: 16,
-                    top: 14,
-                    bottom: 2.73
-                  ),
-                  child: AvatarWidget(
-                    wight: 23,
-                    height: 23,
-                    onTap: (){},
-                    dec: Border.all(
-                      style: BorderStyle.none,
-                    ),)
-                ),
-                //----------------------------Текст имени 2-------------------------
-                Padding(
                   padding: EdgeInsetsGeometry.only(
-                    bottom: 11,
-                    left: 11
-                  ),
-                  child: Align(
-                    alignment: AlignmentGeometry.center,
-                    child: Text(
-                        NameTwo,
-                        style: AppTypography.MainHat.copyWith(fontSize: 6)
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            //---------------GAME----------------------------------
-            Flexible(
-              child: Column(
-                children: [
-                  Padding(padding: EdgeInsetsGeometry.only(
                     left: 27,
                     bottom: 5,
-                    top: 20
+                    top: 20,
                   ),
-                    child: Text(
-                      'Game  Name:',
-                      style: AppTypography.RegularHat.copyWith(fontSize: 6),
-                    ),
-                  ),
-                  Padding(padding: EdgeInsetsGeometry.only(
-                    left: 27,
-                    bottom: 21
-                  ),
-                    child: Text(
-                      'Halo 5',
-                      style: AppTypography.TittlePoppins.copyWith(fontSize: 6),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            //------------------------------STatus--------------------------------------
-            Column(
-              children: [
-                Padding(padding: EdgeInsetsGeometry.only(
-                  left: 18,
-                  top: 20,
-
-
-                ),
                   child: Text(
-                    'Status:',
+                    'Game  Name:',
                     style: AppTypography.RegularHat.copyWith(fontSize: 6),
                   ),
                 ),
-                Padding(padding: EdgeInsetsGeometry.only(
-                  left: 20,
-                  top: 5,
-                  bottom: 21
-                ),
+                Padding(
+                  padding: EdgeInsetsGeometry.only(left: 27, bottom: 21),
                   child: Text(
-                    'Open',
+                    'Halo 5',
                     style: AppTypography.TittlePoppins.copyWith(fontSize: 6),
                   ),
                 ),
               ],
             ),
-            //---------------------------------------------Winning price------------------------
-            Column(
-              children: [
-                Padding(padding: EdgeInsetsGeometry.only(
-                  top: 20,
-                  left: 18,
-                  right: 9
+          ),
+          //------------------------------STatus--------------------------------------
+          Column(
+            children: [
+              Padding(
+                padding: EdgeInsetsGeometry.only(left: 18, top: 20),
+                child: Text(
+                  'Status:',
+                  style: AppTypography.RegularHat.copyWith(fontSize: 6),
                 ),
-                  child: Text(
-                    'Winning Price:',
-                    style: AppTypography.RegularHat.copyWith(fontSize: 6),
-                  ),
+              ),
+              Padding(
+                padding: EdgeInsetsGeometry.only(left: 20, top: 5, bottom: 21),
+                child: Text(
+                  'Open',
+                  style: AppTypography.TittlePoppins.copyWith(fontSize: 6),
                 ),
-                Padding(padding: EdgeInsetsGeometry.only(
+              ),
+            ],
+          ),
+          //---------------------------------------------Winning price------------------------
+          Column(
+            children: [
+              Padding(
+                padding: EdgeInsetsGeometry.only(top: 20, left: 18, right: 9),
+                child: Text(
+                  'Winning Price:',
+                  style: AppTypography.RegularHat.copyWith(fontSize: 6),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsetsGeometry.only(
                   left: 30,
                   right: 18,
                   top: 5,
-                  bottom: 21
+                  bottom: 21,
                 ),
-                  child: Text(
-                    '4,000',
-                    style: AppTypography.TittlePoppins.copyWith(fontSize: 6),
-                  ),
+                child: Text(
+                  '4,000',
+                  style: AppTypography.TittlePoppins.copyWith(fontSize: 6),
                 ),
-              ],
-            ),
-
-          ],
-        ),
-      );
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }

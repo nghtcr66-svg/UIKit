@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nuikit/nuikit.dart';
 
-
-
 class ViewAllWidget extends StatelessWidget {
   final String text_heading;
   final VoidCallback func;

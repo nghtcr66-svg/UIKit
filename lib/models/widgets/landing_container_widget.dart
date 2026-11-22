@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'package:nuikit/nuikit.dart';
-
 
 class LandingcontainerWidget extends StatelessWidget {
   final double wight;
@@ -97,10 +95,7 @@ class LandingcontainerWidget extends StatelessWidget {
                   padding: EdgeInsetsGeometry.only(top: arrow_padding),
                   child: InkWell(
                     onTap: func,
-                    child: Icon(
-                      Icons.arrow_forward,
-                      color: AppColors.White,
-                    ),
+                    child: Icon(Icons.arrow_forward, color: AppColors.White),
                   ),
                 ),
               ],

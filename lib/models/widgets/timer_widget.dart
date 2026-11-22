@@ -1,26 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:nuikit/nuikit.dart';
 
-
 class TimerWidget extends StatelessWidget {
-
   final double widht;
   final double height;
 
-
-
-  const TimerWidget({
-    super.key,
-    required this.widht,
-    required this.height
-  });
+  const TimerWidget({super.key, required this.widht, required this.height});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
-        color: AppColors.Accent
+        color: AppColors.Accent,
       ),
       width: widht,
       height: height,
@@ -35,8 +27,8 @@ class TimerWidget extends StatelessWidget {
                 style: AppTypography.MainPoppins.copyWith(
                   color: AppColors.White,
                   letterSpacing: 0.3,
-                  fontSize: 12
-                )
+                  fontSize: 12,
+                ),
               ),
             ),
           ),
@@ -49,37 +41,13 @@ class TimerWidget extends StatelessWidget {
                 style: AppTypography.TittlePoppins.copyWith(
                   color: AppColors.White,
                   fontSize: 30,
-                  letterSpacing: 0.3
+                  letterSpacing: 0.3,
                 ),
               ),
             ),
-          )
+          ),
         ],
       ),
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

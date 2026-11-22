@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Connectwithwidget extends StatelessWidget{
+class Connectwithwidget extends StatelessWidget {
   final Color color;
   //в качестве иконки будем принимать текст
   final Widget icon;
@@ -14,7 +14,7 @@ class Connectwithwidget extends StatelessWidget{
     required this.icon,
     required this.onTap,
     required this.width,
-    required this.height
+    required this.height,
   });
 
   @override
@@ -26,10 +26,7 @@ class Connectwithwidget extends StatelessWidget{
       child: Container(
         width: width,
         height: height,
-        decoration: BoxDecoration(
-          color: color,
-          shape: BoxShape.circle
-        ),
+        decoration: BoxDecoration(color: color, shape: BoxShape.circle),
         alignment: Alignment.center,
         child: icon,
       ),

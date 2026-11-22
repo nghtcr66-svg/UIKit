@@ -10,18 +10,18 @@ class IndicatorWidget extends StatelessWidget {
     super.key,
     required this.acttive_color,
     required this.dot_color,
-    required this.controller
+    required this.controller,
   });
 
   @override
   Widget build(BuildContext context) {
     return SmoothPageIndicator(
-        controller: controller,
-        count: 3,
-        effect: SlideEffect(
-          dotColor: AppColors.Accent_inactive,
-          activeDotColor: AppColors.Accent
-        ),
+      controller: controller,
+      count: 3,
+      effect: SlideEffect(
+        dotColor: AppColors.Accent_inactive,
+        activeDotColor: AppColors.Accent,
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:nuikit/nuikit.dart';
 
@@ -61,7 +62,10 @@ class _CustomtimerWidgetState extends State<CustomtimerWidget> {
             padding: EdgeInsets.only(top: 8),
             child: Text(
               'Timer',
-              style: AppTypography.Title2_Regular.copyWith(color: AppColors.White,fontSize: 20)
+              style: AppTypography.Title2_Regular.copyWith(
+                color: AppColors.White,
+                fontSize: 20,
+              ),
             ),
           ),
           Padding(

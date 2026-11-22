@@ -4,7 +4,6 @@ import 'package:flutter/services.dart';
 import '../../nuikit.dart';
 
 class CustominputWidget extends StatefulWidget {
-
   //Принимаем прям усе что только можно прикол в том что доп функции всегда есть но по-умолчанию не юзаем
   final String text_hint;
   final TextEditingController controller;
@@ -16,7 +15,6 @@ class CustominputWidget extends StatefulWidget {
   final TextInputType inputType;
   final Widget? suffixIcon;
   final bool obscureText;
-
 
   const CustominputWidget({
     super.key,
@@ -42,10 +40,6 @@ class _CustominputWidgetState extends State<CustominputWidget> {
     _hide = widget.obscureText;
   }
 
-
-
-
-
   @override
   Widget build(BuildContext context) {
     return TextField(
@@ -53,17 +47,20 @@ class _CustominputWidgetState extends State<CustominputWidget> {
         hintText: widget.text_hint,
         errorText: widget.errorMess,
         suffixIcon: widget.obscureText
-            ? IconButton(onPressed: () => setState(() => _hide = !_hide),
-            icon: Icon(
-              _hide ? Icons.visibility_off : Icons.visibility,
-              color: AppColors.Black,
-            ),
-        ): widget.suffixIcon,
+            ? IconButton(
+                onPressed: () => setState(() => _hide = !_hide),
+                icon: Icon(
+                  _hide ? Icons.visibility_off : Icons.visibility,
+                  color: AppColors.Black,
+                ),
+              )
+            : widget.suffixIcon,
         enabledBorder: UnderlineInputBorder(
           borderSide: BorderSide(color: AppColors.Accent_inactive),
         ),
         counterText: '', //спрятали счетчик я хз почему он появляется мне так Claude code сказал
-        focusedBorder: UnderlineInputBorder(   // линия, когда нажал на поле
+        focusedBorder: UnderlineInputBorder(
+          // линия, когда нажал на поле
           borderSide: BorderSide(color: AppColors.Accent, width: 2),
         ),
       ),

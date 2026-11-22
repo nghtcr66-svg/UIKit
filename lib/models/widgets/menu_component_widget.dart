@@ -1,12 +1,10 @@
-
 import 'package:flutter/material.dart';
 import 'package:nuikit/nuikit.dart';
 
 class MenuComponentWidget extends StatelessWidget {
-
-    final Widget icon;
-    final double inner_padding;
-    final String text;
+  final Widget icon;
+  final double inner_padding;
+  final String text;
 
   const MenuComponentWidget({
     super.key,
@@ -25,16 +23,9 @@ class MenuComponentWidget extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Padding(padding: EdgeInsetsGeometry.only(left: 60.43), child: icon),
             Padding(
-                padding: EdgeInsetsGeometry.only(
-                  left: 60.43
-                ),
-                child: icon
-            ),
-            Padding(
-              padding: EdgeInsetsGeometry.only(
-                  left: inner_padding
-              ),
+              padding: EdgeInsetsGeometry.only(left: inner_padding),
               child: Text(
                 text,
                 style: AppTypography.MainPoppins.copyWith(letterSpacing: -0.3),

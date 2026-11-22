@@ -1,10 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'custom_field_widget.dart';
 
-class PhoneFieldModel extends StatelessWidget{
+class PhoneFieldModel extends StatelessWidget {
   final TextEditingController phoneController;
   final TextEditingController regController;
   final String? errMess;
@@ -20,7 +19,6 @@ class PhoneFieldModel extends StatelessWidget{
     required this.phoneRegWight,
   });
 
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -34,26 +32,21 @@ class PhoneFieldModel extends StatelessWidget{
             text_hint: '+231',
             inputType: TextInputType.phone,
             maxLenght: 4,
-//Необязательный параметр он нужен для валидации но мне интересно было посмотреть як он делает
-            inputFormater: [FilteringTextInputFormatter.allow(
-              RegExp(
-                  r'[+0-9]'
-                )
-              )
+            //Необязательный параметр он нужен для валидации но мне интересно было посмотреть як он делает
+            inputFormater: [
+              FilteringTextInputFormatter.allow(RegExp(r'[+0-9]')),
             ],
-          )
+          ),
         ),
-        SizedBox(
-          width: 15,
-        ),
+        SizedBox(width: 15),
         SizedBox(
           width: phoneWight,
           child: CustomFieldWidget(
             text_hint: 'yourPhone',
             controller: phoneController,
-            inputType: TextInputType.phone, 
+            inputType: TextInputType.phone,
             maxLenght: 4,
-          )
+          ),
         ),
       ],
     );

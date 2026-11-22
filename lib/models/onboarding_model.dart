@@ -6,7 +6,7 @@ class OnboardingModel {
   final String text_desc;
   final Widget button_widget;
 
-  OnboardingModel ({
+  OnboardingModel({
     required this.text_title,
     required this.text_desc,
     required this.button_widget,

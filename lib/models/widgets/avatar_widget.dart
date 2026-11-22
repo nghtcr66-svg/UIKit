@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 
-
-
 class AvatarWidget extends StatelessWidget {
-
-
   final double wight;
   final double height;
   final VoidCallback onTap;
   final BoxBorder dec;
-
 
   const AvatarWidget({
     super.key,
@@ -24,16 +19,16 @@ class AvatarWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-            width: wight,
-            height: height,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              border: dec,
-              image: const DecorationImage(
-                image: AssetImage('assets/icons/checker.png'),
-                fit: BoxFit.cover, // Растягивает картинку, чтобы она полностью заполнила круг
-              ),
-            ),
+        width: wight,
+        height: height,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          border: dec,
+          image: const DecorationImage(
+            image: AssetImage('assets/icons/checker.png'),
+            fit: BoxFit.cover, // Растягивает картинку, чтобы она полностью заполнила круг
+          ),
+        ),
       ),
     );
   }
