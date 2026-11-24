@@ -1,109 +1,138 @@
 import 'package:flutter/material.dart';
-import 'package:nuikit/api/api_client.dart';
-import 'package:nuikit/models/register_request_model.dart';
-import 'package:nuikit/models/widgets/button_widget.dart';
-import 'package:nuikit/models/widgets/indicator_widget.dart';
-import 'package:nuikit/models/widgets/landing_container_widget.dart';
-import 'package:nuikit/models/widgets/timer_widget.dart';
+import 'package:nuikit/widgets/button_widget.dart';
+import 'package:nuikit/widgets/indicator_widget.dart';
+import 'package:nuikit/widgets/landing_container_widget.dart';
+import 'package:nuikit/widgets/timer_widget.dart';
 import 'package:nuikit/nuikit.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
-import 'package:nuikit/models/widgets/checkbox_widget.dart';
-import 'package:nuikit/models/widgets/custominput_widget.dart';
-import 'package:nuikit/models/widgets/customtimer_widget.dart';
-import 'package:nuikit/models/widgets/picker_widget.dart';
-import 'package:dio/dio.dart';
-import 'package:dio/browser.dart';
-import 'package:nuikit/models/publish_game_request_model.dart';
+import 'package:nuikit/widgets/checkbox_widget.dart';
+import 'package:nuikit/widgets/custominput_widget.dart';
+import 'package:nuikit/widgets/customtimer_widget.dart';
+import 'package:nuikit/widgets/picker_widget.dart';
 
-void request_func() async {
-  final dio = Dio();
-  // Эта одна строчка напечатает в консоль весь запрос, заголовки и ответ сервера!
-  dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
 
-  try {
-    final api = ApiClient(dio);
-    const token = '4OWiuS9F-626KO4wXDH2QBn6VWU7bhgRvN49QLJn4KQ';
 
-    final response = await api.getMyStatistic('Bearer $token');
-    print('Успех: $response');
-  } catch (e) {
-    print('Ошибка: $e');
-  }
-}
 
-void post_func() async {
-  final dio = Dio();
-  // Эта одна строчка напечатает в консоль весь запрос, заголовки и ответ сервера!
-  dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
 
-  try {
-    final api = ApiClient(dio);
-    const token = '4OWiuS9F-626KO4wXDH2QBn6VWU7bhgRvN49QLJn4KQ';
 
-    final response = await api.publishGame(
-      'Bearer $token',
-      PublishGameRequestModel(
-        category: 'image',
-        description: 'desc',
-        endsAt: DateTime.now()
-            .add(const Duration(days: 2))
-            .toUtc()
-            .toIso8601String(),
-        name: 'Alehacartoha',
-        reminderEnabled: false,
-        startsAt: DateTime.now()
-            .add(const Duration(days: 1))
-            .toUtc()
-            .toIso8601String(),
-        winningPoints: 300,
-      ),
-    );
-    print('Успех: $response');
-  } catch (e) {
-    print('Ошибка: $e');
-  }
-}
 
-void register_func() async {
-  final dio = Dio();
-  // Эта одна строчка напечатает в консоль весь запрос, заголовки и ответ сервера!
-  dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
 
-  try {
-    final api = ApiClient(dio);
-    const token = '4OWiuS9F-626KO4wXDH2QBn6VWU7bhgRvN49QLJn4KQ';
 
-    final response = await api.registerME(
-      'Bearer $token',
-      RegisterRequestModel(
-        email: "test@test.ru",
-        fullName: "test",
-        password: "12345678",
-        phone: "+71111111111",
-        username: "test",
-      ),
-    );
-    print('Успех: $response');
-  } catch (e) {
-    print('Ошибка: $e');
-  }
-}
 
-void getInfo_func() async {
-  final dio = Dio();
-  // Эта одна строчка напечатает в консоль весь запрос, заголовки и ответ сервера!
-  dio.interceptors.add(LogInterceptor(requestBody: true, responseBody: true));
 
-  try {
-    final api = ApiClient(dio);
-    const token = 'y79RLpsBDEgwgqUJtawimBWloyhZoOqt6rQF1ZRW8fE';
 
-    final response = await api.getUserInfo('Bearer $token', 1);
-    print('Успех: $response');
-  } catch (e) {
-    print('Ошибка: $e');
-  }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void main() {
   runApp(const MyStorybookApp());
@@ -162,7 +191,7 @@ class MyStorybookApp extends StatelessWidget {
               widht: 315,
               height: 58,
               text: "Lets Combat",
-              onTap: getInfo_func,
+              onTap: (){},
             );
           },
         ),

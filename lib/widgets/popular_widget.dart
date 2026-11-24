@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nuikit/models/widgets/avatar_widget.dart';
+import 'package:nuikit/widgets/avatar_widget.dart';
 import 'package:nuikit/nuikit.dart';
 
 class PopularWidget extends StatelessWidget {
