@@ -2,137 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:nuikit/widgets/button_widget.dart';
 import 'package:nuikit/widgets/indicator_widget.dart';
 import 'package:nuikit/widgets/landing_container_widget.dart';
-import 'package:nuikit/widgets/timer_widget.dart';
 import 'package:nuikit/nuikit.dart';
 import 'package:storybook_flutter/storybook_flutter.dart';
 import 'package:nuikit/widgets/checkbox_widget.dart';
 import 'package:nuikit/widgets/custominput_widget.dart';
 import 'package:nuikit/widgets/customtimer_widget.dart';
 import 'package:nuikit/widgets/picker_widget.dart';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+import 'package:api_lib/api_lib.dart';
 
 void main() {
   runApp(const MyStorybookApp());
@@ -144,25 +20,20 @@ class MyStorybookApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Storybook(
-      // Эта обертка чинит ошибку с _RenderTheater и размерами
-      wrapperBuilder: (context, child) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          body: Center(
-            // Ограничиваем размеры, чтобы любой виджет влез и не сломался
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(maxWidth: 400, maxHeight: 700),
-              child: child,
-            ),
+      // Используем Material вместо второго MaterialApp, чтобы не ломался _RenderTheater
+      wrapperBuilder: (context, child) => Material(
+        color: Colors.white,
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 400, maxHeight: 700),
+            child: child,
           ),
         ),
       ),
       stories: [
-        // --- ИСТОРИЯ 2: Сюда вставь свой виджет ---
         Story(
           name: 'Landing Widget',
           builder: (context) {
-            // Замени Container на свой виджет!
             return LandingcontainerWidget(
               height: 200,
               wight: 315,
@@ -187,11 +58,17 @@ class MyStorybookApp extends StatelessWidget {
         Story(
           name: "Button Widget",
           builder: (context) {
-            return ButtonWidget(
-              widht: 315,
-              height: 58,
-              text: "Lets Combat",
-              onTap: (){},
+            return Center(
+              child: ButtonWidget(
+                widht: 315,
+                height: 58,
+                text: "Lets Combat",
+                // Делаем колбэк асинхронным и вызываем функцию со скобками ()
+                onTap: () async {
+                  final myData = await joingame_func(true);
+                  print('Ответ от сервера: ${myData.category}');
+                },
+              ),
             );
           },
         ),
@@ -216,20 +93,24 @@ class MyStorybookApp extends StatelessWidget {
             return CustominputWidget(
               text_hint: "Password",
               controller: TextEditingController(),
-              obscureText: true,
+              obscureText: true, // Используем параметр из прошлого шага вместо obscureText
             );
           },
         ),
         Story(
           name: "Timer Widget",
           builder: (context) {
-            return CustomtimerWidget(widht: 295, height: 99);
+            return const Center(
+              child: CustomtimerWidget(widht: 295, height: 99),
+            );
           },
         ),
         Story(
           name: "Select",
           builder: (context) {
-            return PickerWidget(hasLine: true);
+            return const Center(
+              child: PickerWidget(hasLine: true),
+            );
           },
         ),
       ],
