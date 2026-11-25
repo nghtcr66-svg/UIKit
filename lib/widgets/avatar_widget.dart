@@ -25,7 +25,7 @@ class AvatarWidget extends StatelessWidget {
           shape: BoxShape.circle,
           border: dec,
           image: const DecorationImage(
-            image: AssetImage('assets/icons/checker.png'),
+            image: AssetImage('checker.png'),
             fit: BoxFit.cover, // Растягивает картинку, чтобы она полностью заполнила круг
           ),
         ),
