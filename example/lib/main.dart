@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nuikit/widgets/avatar_widget.dart';
 import 'package:nuikit/widgets/button_widget.dart';
 import 'package:nuikit/widgets/indicator_widget.dart';
 import 'package:nuikit/widgets/landing_container_widget.dart';
@@ -110,6 +111,19 @@ class MyStorybookApp extends StatelessWidget {
           builder: (context) {
             return const Center(
               child: PickerWidget(hasLine: true),
+            );
+          },
+        ),
+        Story(
+          name: "AVA",
+          builder: (context) {
+            return Center(
+              child: AvatarWidget(
+                wight: 56,
+                height: 56,
+                onTap: (){},
+                dec: Border.all() 
+                ),
             );
           },
         ),
